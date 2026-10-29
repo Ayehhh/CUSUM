@@ -121,7 +121,7 @@ def create_pdf_report(df, target, std_dev, k_val, h_val, date_col, val_col):
     story.append(Paragraph("<b>1. Analysis Parameters & Baseline Settings</b>", heading_style))
     param_data = [
         ["Parameter", "Configured Value", "Description"],
-        ["Target Mean (μ₀)", f"{target:.4f}", "Baseline mean value"],
+        ["Target Mean (μ)", f"{target:.4f}", "Baseline mean value"],
         ["Std Deviation (σ)", f"{std_dev:.4f}", "Estimated process standard deviation"],
         ["Allowance (k)", f"{k_val:.4f}", f"Reference allowance ({k_val/std_dev:.2f} σ)"],
         ["Decision Limit (h)", f"{h_val:.4f}", f"Threshold limit ({h_val/std_dev:.2f} σ)"]
@@ -150,7 +150,7 @@ def create_pdf_report(df, target, std_dev, k_val, h_val, date_col, val_col):
     * <b>Out-of-Control Points (Alarms):</b> <font color="{'red' if total_alarms > 0 else 'green'}"><b>{total_alarms}</b></font><br/>
     * <b>Maximum C+ (Upper Drift):</b> {max_c_plus:.4f}<br/>
     * <b>Maximum C- (Lower Drift):</b> {max_c_minus:.4f}<br/>
-    * <b>Status:</b> {'⚠️ ATTENTION REQUIRED - Baseline shift detected!' if total_alarms > 0 else '✅ NORMAL - Process operating within statistical limits.'}
+    * <b>Status:</b> {'ATTENTION REQUIRED: Baseline shift detected!' if total_alarms > 0 else 'NORMAL: Process operating within statistical limits.'}
     """
     story.append(Paragraph(summary_text, normal_style))
     story.append(Spacer(1, 15))
