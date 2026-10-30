@@ -35,6 +35,9 @@ st.markdown("""
 # -----------------------------------------------------------------------------
 st.markdown('<div class="main-header">CUSUM Analysis & Equipment Degradation</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-header">Monitoring subtle baseline shifts and early-stage component degradation</div>', unsafe_allow_html=True)
+st.caption(
+    "Developed by Harith Irfan. Contact me for further information"
+    " @ mharithirfan14@icloud.com")
 
 with st.expander("📚 Knowledge Base & CUSUM Definitions (Click to expand/collapse)", expanded=False):
     st.markdown("""
